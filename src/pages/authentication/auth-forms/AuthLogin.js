@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
 
 // material-ui
 import {
     Button,
     Checkbox,
+    Divider,
     FormControlLabel,
     FormHelperText,
     Grid,
@@ -23,6 +23,7 @@ import * as Yup from 'yup';
 import { Formik } from 'formik';
 
 // project import
+import FirebaseSocial from './FirebaseSocial';
 import AnimateButton from 'components/@extended/AnimateButton';
 
 // assets
@@ -31,61 +32,28 @@ import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
 // ============================|| FIREBASE - LOGIN ||============================ //
 
 const AuthLogin = () => {
-    const [checked, setChecked] = useState(false);
-    const [showPassword, setShowPassword] = useState(false);
-    const [isShow, setIsShow] = useState(false);
-    const [validationsMsg, setMsg] = useState('');
-    const navigate = useNavigate();
+    const [checked, setChecked] = React.useState(false);
 
-    // const handleWrongDetails = () => {
-    //     setIsShow(!isShow);
-    //   };
-
+    const [showPassword, setShowPassword] = React.useState(false);
     const handleClickShowPassword = () => {
         setShowPassword(!showPassword);
     };
 
-    // const handleMouseDownPassword = (event) => {
-    //     event.preventDefault();
-    // };
-
-    const users = [
-        {
-            email: 'admin1@gmail.com',
-            password: 'admin1'
-        },
-        {
-            email: 'admin2@gmail.com',
-            password: 'admin2@2'
-        }
-    ];
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        const toCompare = {
-            email: e.target.elements.email.value,
-            password: e.target.elements.password.value
-        };
-
-        if (users.some((user) => JSON.stringify(user) === JSON.stringify(toCompare))) {
-            setMsg('');
-        } else {
-            setMsg('פרטים לא נכונים או משתמש לא קיים');
-        }
+    const handleMouseDownPassword = (event) => {
+        event.preventDefault();
     };
 
     return (
         <>
             <Formik
                 initialValues={{
-                    email: 'info@cgroup47.com',
+                    email: 'info@codedthemes.com',
                     password: '123456',
                     submit: null
                 }}
                 validationSchema={Yup.object().shape({
-                    email: Yup.string().email('האימייל חייב להיות תקין').max(255).required('האימייל הוא חובה'),
-                    password: Yup.string().min(2, 'סיסמה צריכה להיות יותר מ2 תווים').max(10).required('הסיסמה היא חובה') //Add validations
+                    email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
+                    password: Yup.string().max(255).required('Password is required')
                 })}
                 onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
                     try {
@@ -98,8 +66,8 @@ const AuthLogin = () => {
                     }
                 }}
             >
-                {({ errors, handleBlur, handleChange, isSubmitting, touched, values }) => (
-                    <form noValidate onSubmit={handleSubmit} style={{ direction: 'rtl' }}>
+                {({ errors, handleBlur, handleChange, handleSubmit, isSubmitting, touched, values }) => (
+                    <form noValidate onSubmit={handleSubmit}>
                         <Grid container spacing={3}>
                             <Grid item xs={12}>
                                 <Stack spacing={1}>
@@ -111,7 +79,7 @@ const AuthLogin = () => {
                                         name="email"
                                         onBlur={handleBlur}
                                         onChange={handleChange}
-                                        placeholder="הכנס כתובת דואל"
+                                        placeholder="Enter email address"
                                         fullWidth
                                         error={Boolean(touched.email && errors.email)}
                                     />
@@ -139,6 +107,7 @@ const AuthLogin = () => {
                                                 <IconButton
                                                     aria-label="toggle password visibility"
                                                     onClick={handleClickShowPassword}
+                                                    onMouseDown={handleMouseDownPassword}
                                                     edge="end"
                                                     size="large"
                                                 >
@@ -146,7 +115,7 @@ const AuthLogin = () => {
                                                 </IconButton>
                                             </InputAdornment>
                                         }
-                                        placeholder="הכנס סיסמה"
+                                        placeholder="Enter password"
                                     />
                                     {touched.password && errors.password && (
                                         <FormHelperText error id="standard-weight-helper-text-password-login">
@@ -194,8 +163,15 @@ const AuthLogin = () => {
                                         התחברות
                                     </Button>
                                 </AnimateButton>
-                                <Typography variant="h6">{validationsMsg}</Typography>
                             </Grid>
+                            {/* <Grid item xs={12}>
+                                <Divider>
+                                    <Typography variant="caption"> Login with</Typography>
+                                </Divider>
+                            </Grid>
+                            <Grid item xs={12}>
+                                <FirebaseSocial />
+                            </Grid> */}
                         </Grid>
                     </form>
                 )}
