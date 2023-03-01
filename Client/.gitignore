@@ -108,9 +108,3 @@ dist
 
 #output
 build
-
-#files
-node_modules
-
-#config
-*.config

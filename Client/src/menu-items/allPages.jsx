@@ -34,13 +34,6 @@ const allPages = {
             type: 'item',
             url: '/department-page',
             icon: icons.ChromeOutlined
-        },
-        {
-            id: 'register-page',
-            title: 'הרשמה',
-            type: 'item',
-            url: '/register-page',
-            icon: icons.ChromeOutlined
         }
     ]
 };
