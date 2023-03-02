@@ -29,20 +29,6 @@ const allPages = {
             icon: icons.ChromeOutlined
         },
         {
-            id: 'department-page',
-            title: 'מחלקות',
-            type: 'item',
-            url: '/department-page',
-            icon: icons.ChromeOutlined
-        },
-        {
-            id: 'register-page',
-            title: 'הרשמה',
-            type: 'item',
-            url: '/register-page',
-            icon: icons.ChromeOutlined
-        },
-        {
             id: 'goals-page',
             title: 'יעדים',
             type: 'item',

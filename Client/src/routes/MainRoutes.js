@@ -5,10 +5,8 @@ import Loadable from 'components/Loadable';
 import MainLayout from 'layout/MainLayout';
 
 const DashboardDefault = Loadable(lazy(() => import('pages/dashboard')));
-const DepartmentPage = Loadable(lazy(() => import('pages/extra-pages/Departments')));
 const EvaluationPage = Loadable(lazy(() => import('pages/extra-pages/Evaluation')));
 const UsersPage = Loadable(lazy(() => import('pages/extra-pages/Users')));
-const RegisterPage = Loadable(lazy(() => import('pages/extra-pages/Register')));
 const GoalsPage = Loadable(lazy(() => import('pages/extra-pages/Goals')));
 
 // ==============================|| MAIN ROUTING ||============================== //
@@ -37,18 +35,6 @@ const MainRoutes = {
         {
             path: 'users-page',
             element: <UsersPage />
-        },
-        {
-            path: 'department-page',
-            element: <DepartmentPage />
-        },
-        {
-            path: 'department-page',
-            element: <DepartmentPage />
-        },
-        {
-            path: 'register-page',
-            element: <RegisterPage />
         },
         {
             path: 'goals-page',

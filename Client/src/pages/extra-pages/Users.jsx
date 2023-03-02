@@ -12,7 +12,6 @@ import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import { TextField } from '../../../node_modules/@mui/material/index';
 import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
 import FormControl from '@mui/material/FormControl';
 import { useState, useEffect } from 'react';
 
@@ -54,6 +53,16 @@ export default function BasicTable() {
     const [userDepartment, setDepartment] = useState('');
     const [userJob, setJob] = useState('');
     const [validationsMsg, setMsg] = useState('');
+    // const [editRows, setEditRows] = useState({});
+
+    // const handleEditRow = (id) => {
+    //     setEditRows({ ...editRows, [id]: true });
+    //   };
+
+    //   const handleUpdateRow = (id, newData) => {
+    //     setUsers(userArr.map((row) => (row.index === id ? { ...row, ...newData } : row)));
+    //     setEditRows({ ...editRows, [id]: false });
+    //   };
 
     console.log(userArr);
 
@@ -88,9 +97,18 @@ export default function BasicTable() {
         }
     };
 
+    const deleteUser = (index) => {
+        console.log(userArr);
+        const dataUsers = [...userArr];
+        dataUsers.splice(index, 1);
+        setUsers(dataUsers);
+        console.log('hi' + userArr);
+    };
+
     return (
         <>
             <Button onClick={handleOpen}>צור משתמש חדש</Button>
+
             <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
                 <Box sx={style}>
                     <form align="right" float="right" direction="rtl">
@@ -143,38 +161,36 @@ export default function BasicTable() {
                             onChange={(event) => setPassword(event.target.value)}
                         />
                         <br />
-                        {/* <FormControl>
+                        <FormControl>
                             <Typography align="right">מגדר </Typography>
-                            <Select
-                                style={{ width: '300px', margin: '5px' }}
-                                labelId="demo-simple-select-autowidth-label"
-                                id="demo-simple-select-autowidth"
-                                value={userGender}
+                            <TextField
+                                style={{ width: '300px', margin: '5px', direction: 'rtl' }}
                                 onChange={(event) => setGender(event.target.value)}
-                                autoWidth
+                                select
+                                fullWidth
+                                defaultValue=""
                             >
                                 {gender.map((gen) => (
-                                    <MenuItem direction="rtl">{gen}</MenuItem>
+                                    <MenuItem value={gen}>{gen}</MenuItem>
                                 ))}
-                            </Select>{' '}
+                            </TextField>
                         </FormControl>
 
                         <br />
                         <FormControl>
                             <Typography align="right">מחלקה </Typography>
-                            <Select
-                                style={{ width: '300px', margin: '5px' }}
-                                labelId="demo-simple-select-autowidth-label"
-                                id="demo-simple-select-autowidth"
-                                value={userDepartment}
+                            <TextField
+                                style={{ width: '300px', margin: '5px', direction: 'rtl' }}
                                 onChange={(event) => setDepartment(event.target.value)}
-                                autoWidth
+                                select
+                                fullWidth
+                                defaultValue=""
                             >
                                 {departments.map((dep) => (
-                                    <MenuItem direction="rtl">{dep}</MenuItem>
+                                    <MenuItem value={dep}>{dep}</MenuItem>
                                 ))}
-                            </Select>
-                        </FormControl> */}
+                            </TextField>
+                        </FormControl>
 
                         <br />
                         <Typography align="right">תפקיד </Typography>
@@ -218,11 +234,12 @@ export default function BasicTable() {
                             <TableCell align="right">מגדר</TableCell>
                             <TableCell align="right">מחלקה</TableCell>
                             <TableCell align="right">תפקיד</TableCell>
+                            <TableCell align="right"></TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {userArr.map((row) => (
-                            <TableRow key={row.userId} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+                        {userArr.map((row, index) => (
+                            <TableRow key={index} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
                                 <TableCell component="th" scope="row" align="right">
                                     {row.userId}
                                 </TableCell>
@@ -232,6 +249,10 @@ export default function BasicTable() {
                                 <TableCell align="right">{row.userGender}</TableCell>
                                 <TableCell align="right">{row.userDepartment}</TableCell>
                                 <TableCell align="right">{row.userJob}</TableCell>
+                                <TableCell>
+                                    <Button onClick={() => deleteUser(index)}>מחיקה </Button>
+                                    <Button>עריכה </Button>
+                                </TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
