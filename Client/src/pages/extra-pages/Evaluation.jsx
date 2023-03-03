@@ -18,7 +18,7 @@ const surveyJson = {
                         {
                             type: 'matrixdropdown',
                             name: 'sr1',
-                            title: 'What do your feel?',
+                            title: 'סמנו את התשובה המתאימה ביותר עבורך',
                             columns: [
                                 {
                                     name: 'col1',
@@ -26,12 +26,30 @@ const surveyJson = {
                                     showInMultipleColumns: true,
                                     isRequired: true,
                                     choices: [
-                                        'לא עומד בציפיות',
-                                        'עומד בחלק מהציפיות',
-                                        'עומד כמעט בכל הציפיות',
-                                        'עומד בציפיות ',
-                                        'עומד בציפיות בצורה טובה מאד',
-                                        'לא רלוונטי לתפקיד'
+                                        {
+                                            value: 0,
+                                            text: 'לא רלוונטי לתפקיד'
+                                        },
+                                        {
+                                            value: 1,
+                                            text: 'לא עומד בציפיות'
+                                        },
+                                        {
+                                            value: 2,
+                                            text: 'עומד בחלק בציפיות'
+                                        },
+                                        {
+                                            value: 3,
+                                            text: 'עומד כמעט בכל הציפיות'
+                                        },
+                                        {
+                                            value: 4,
+                                            text: 'עומד בציפיות'
+                                        },
+                                        {
+                                            value: 5,
+                                            text: 'עומד בציפיות בצורה טובה מאד'
+                                        }
                                     ]
                                 },
                                 {
@@ -41,14 +59,22 @@ const surveyJson = {
                                 }
                             ],
                             rows: [
-                                'Excited',
-                                'Enthusiastic',
-                                'Open',
-                                'Physically safe',
-                                'Emotionally safe',
-                                'Apprehensive',
-                                'Nervous',
-                                'Scared'
+                                {
+                                    value: 1,
+                                    text: 'מעניק שירות אדיב מנומס וסבלני'
+                                },
+                                {
+                                    value: 2,
+                                    text: 'פועל למילוי צרכי הלקוח ושביעות רצונו'
+                                },
+                                {
+                                    value: 3,
+                                    text: 'מגיב במהירותהנדרשת לצרכי הלקוחות'
+                                },
+                                {
+                                    value: 4,
+                                    text: 'מגלה גמישות ונכונות לשינוי'
+                                }
                             ]
                         }
                     ]
@@ -68,7 +94,32 @@ const surveyJson = {
                                     cellType: 'radiogroup',
                                     showInMultipleColumns: true,
                                     isRequired: true,
-                                    choices: ['Strongly disagree', 'Disagree', 'Neutral', 'Agree', 'Strongly agree']
+                                    choices: [
+                                        {
+                                            value: 0,
+                                            text: 'לא רלוונטי לתפקיד'
+                                        },
+                                        {
+                                            value: 1,
+                                            text: 'לא עומד בציפיות'
+                                        },
+                                        {
+                                            value: 2,
+                                            text: 'עומד בחלק בציפיות'
+                                        },
+                                        {
+                                            value: 3,
+                                            text: 'עומד כמעט בכל הציפיות'
+                                        },
+                                        {
+                                            value: 4,
+                                            text: 'עומד בציפיות'
+                                        },
+                                        {
+                                            value: 5,
+                                            text: 'עומד בציפיות בצורה טובה מאד'
+                                        }
+                                    ]
                                 },
                                 {
                                     name: 'comment',
@@ -77,14 +128,30 @@ const surveyJson = {
                                 }
                             ],
                             rows: [
-                                'Excited',
-                                'Enthusiastic',
-                                'Open',
-                                'Physically safe',
-                                'Emotionally safe',
-                                'Apprehensive',
-                                'Nervous',
-                                'Scared'
+                                {
+                                    value: 1,
+                                    text: 'מגלה שליטה מקצועית ומיומנות בתחום עיסוקי'
+                                },
+                                {
+                                    value: 2,
+                                    text: 'מגלה יכולת עבודה עצמאית'
+                                },
+                                {
+                                    value: 3,
+                                    text: 'מקפיד לעמוד בלוחות הזמנים'
+                                },
+                                {
+                                    value: 4,
+                                    text: 'מנצל ביעילות את הזמן ביחס למשימות המוטלות'
+                                },
+                                {
+                                    value: 5,
+                                    text: 'פועלת כמיטב היכולת לשם עמידה במשימות ויעדים שהוצבו'
+                                },
+                                {
+                                    value: 6,
+                                    text: 'מקפיד על ביצוע איכותי של העבודה'
+                                }
                             ]
                         }
                     ]
@@ -104,7 +171,32 @@ const surveyJson = {
                                     cellType: 'radiogroup',
                                     showInMultipleColumns: true,
                                     isRequired: true,
-                                    choices: ['Strongly disagree', 'Disagree', 'Neutral', 'Agree', 'Strongly agree']
+                                    choices: [
+                                        {
+                                            value: 0,
+                                            text: 'לא רלוונטי לתפקיד'
+                                        },
+                                        {
+                                            value: 1,
+                                            text: 'לא עומד בציפיות'
+                                        },
+                                        {
+                                            value: 2,
+                                            text: 'עומד בחלק בציפיות'
+                                        },
+                                        {
+                                            value: 3,
+                                            text: 'עומד כמעט בכל הציפיות'
+                                        },
+                                        {
+                                            value: 4,
+                                            text: 'עומד בציפיות'
+                                        },
+                                        {
+                                            value: 5,
+                                            text: 'עומד בציפיות בצורה טובה מאד'
+                                        }
+                                    ]
                                 },
                                 {
                                     name: 'comment',
@@ -113,14 +205,26 @@ const surveyJson = {
                                 }
                             ],
                             rows: [
-                                'Excited',
-                                'Enthusiastic',
-                                'Open',
-                                'Physically safe',
-                                'Emotionally safe',
-                                'Apprehensive',
-                                'Nervous',
-                                'Scared'
+                                {
+                                    value: 1,
+                                    text: 'נוהג בכבוד כלפי הממונים, החברים והכפופים'
+                                },
+                                {
+                                    value: 2,
+                                    text: 'מגלה יכולת עבודה עצמאית'
+                                },
+                                {
+                                    value: 3,
+                                    text: 'מקפיד לעמוד בלוחות הזמנים'
+                                },
+                                {
+                                    value: 4,
+                                    text: 'מנצל ביעילות את הזמן ביחס למשימות המוטלות'
+                                },
+                                {
+                                    value: 5,
+                                    text: 'פועלת כמיטב היכולת לשם עמידה במשימות ויעדים שהוצבו'
+                                }
                             ]
                         }
                     ]
@@ -140,7 +244,32 @@ const surveyJson = {
                                     cellType: 'radiogroup',
                                     showInMultipleColumns: true,
                                     isRequired: true,
-                                    choices: ['Strongly disagree', 'Disagree', 'Neutral', 'Agree', 'Strongly agree']
+                                    choices: [
+                                        {
+                                            value: 0,
+                                            text: 'לא רלוונטי לתפקיד'
+                                        },
+                                        {
+                                            value: 1,
+                                            text: 'לא עומד בציפיות'
+                                        },
+                                        {
+                                            value: 2,
+                                            text: 'עומד בחלק בציפיות'
+                                        },
+                                        {
+                                            value: 3,
+                                            text: 'עומד כמעט בכל הציפיות'
+                                        },
+                                        {
+                                            value: 4,
+                                            text: 'עומד בציפיות'
+                                        },
+                                        {
+                                            value: 5,
+                                            text: 'עומד בציפיות בצורה טובה מאד'
+                                        }
+                                    ]
                                 },
                                 {
                                     name: 'comment',
@@ -176,7 +305,32 @@ const surveyJson = {
                                     cellType: 'radiogroup',
                                     showInMultipleColumns: true,
                                     isRequired: true,
-                                    choices: ['Strongly disagree', 'Disagree', 'Neutral', 'Agree', 'Strongly agree']
+                                    choices: [
+                                        {
+                                            value: 0,
+                                            text: 'לא רלוונטי לתפקיד'
+                                        },
+                                        {
+                                            value: 1,
+                                            text: 'לא עומד בציפיות'
+                                        },
+                                        {
+                                            value: 2,
+                                            text: 'עומד בחלק בציפיות'
+                                        },
+                                        {
+                                            value: 3,
+                                            text: 'עומד כמעט בכל הציפיות'
+                                        },
+                                        {
+                                            value: 4,
+                                            text: 'עומד בציפיות'
+                                        },
+                                        {
+                                            value: 5,
+                                            text: 'עומד בציפיות בצורה טובה מאד'
+                                        }
+                                    ]
                                 },
                                 {
                                     name: 'comment',
@@ -212,7 +366,32 @@ const surveyJson = {
                                     cellType: 'radiogroup',
                                     showInMultipleColumns: true,
                                     isRequired: true,
-                                    choices: ['Strongly disagree', 'Disagree', 'Neutral', 'Agree', 'Strongly agree']
+                                    choices: [
+                                        {
+                                            value: 0,
+                                            text: 'לא רלוונטי לתפקיד'
+                                        },
+                                        {
+                                            value: 1,
+                                            text: 'לא עומד בציפיות'
+                                        },
+                                        {
+                                            value: 2,
+                                            text: 'עומד בחלק בציפיות'
+                                        },
+                                        {
+                                            value: 3,
+                                            text: 'עומד כמעט בכל הציפיות'
+                                        },
+                                        {
+                                            value: 4,
+                                            text: 'עומד בציפיות'
+                                        },
+                                        {
+                                            value: 5,
+                                            text: 'עומד בציפיות בצורה טובה מאד'
+                                        }
+                                    ]
                                 },
                                 {
                                     name: 'comment',
@@ -337,9 +516,17 @@ function QuestionnaireForm() {
     survey.onComplete.add((sender, options) => {
         console.log(JSON.stringify(sender.data, null, 3));
     });
-    survey.showProgressBar = 'top';
+    // survey.showProgressBar = 'top';
 
-    return <Survey model={survey} />;
+    return (
+        <Survey
+            model={survey}
+            align="right"
+            sx={{
+                direction: 'rtl !importent'
+            }}
+        />
+    );
 }
 
 // function saveSurveyResults(url, json) {
