@@ -11,6 +11,7 @@ const surveyJson = {
         {
             elements: [
                 {
+                    showQuestionNumbers: 'off',
                     type: 'panel',
                     name: 'serie1',
                     title: 'שירותיות',
@@ -53,6 +54,7 @@ const surveyJson = {
                                     ]
                                 },
                                 {
+                                    isRequired: true,
                                     name: 'comment',
                                     title: 'הערה מילולית',
                                     cellType: 'comment'
@@ -80,6 +82,7 @@ const surveyJson = {
                     ]
                 },
                 {
+                    showQuestionNumbers: 'off',
                     type: 'panel',
                     name: 'serie2',
                     title: 'מקצועיות ואיכות בעבודה',
@@ -87,13 +90,12 @@ const surveyJson = {
                         {
                             type: 'matrixdropdown',
                             name: 'sr2',
-                            title: 'What do your feel?',
+                            title: 'סמנו את התשובה המתאימה ביותר עבורך',
                             columns: [
                                 {
                                     name: 'col2',
                                     cellType: 'radiogroup',
                                     showInMultipleColumns: true,
-                                    isRequired: true,
                                     choices: [
                                         {
                                             value: 0,
@@ -122,8 +124,9 @@ const surveyJson = {
                                     ]
                                 },
                                 {
+                                    isRequired: true,
                                     name: 'comment',
-                                    title: 'Please comment',
+                                    title: 'הערה מילולית',
                                     cellType: 'comment'
                                 }
                             ],
@@ -157,6 +160,7 @@ const surveyJson = {
                     ]
                 },
                 {
+                    showQuestionNumbers: 'off',
                     type: 'panel',
                     name: 'serie3',
                     title: 'יחסי עבודה , תקשורת ועבודת צוות',
@@ -164,7 +168,7 @@ const surveyJson = {
                         {
                             type: 'matrixdropdown',
                             name: 'sr3',
-                            title: 'What do your feel?',
+                            title: 'סמנו את התשובה המתאימה ביותר עבורך',
                             columns: [
                                 {
                                     name: 'col3',
@@ -199,8 +203,9 @@ const surveyJson = {
                                     ]
                                 },
                                 {
+                                    isRequired: true,
                                     name: 'comment',
-                                    title: 'Please comment',
+                                    title: 'הערה מילולית',
                                     cellType: 'comment'
                                 }
                             ],
@@ -211,25 +216,26 @@ const surveyJson = {
                                 },
                                 {
                                     value: 2,
-                                    text: 'מגלה יכולת עבודה עצמאית'
+                                    text: 'משמש דוגמה אישית לסובבים'
                                 },
                                 {
                                     value: 3,
-                                    text: 'מקפיד לעמוד בלוחות הזמנים'
+                                    text: 'משתף פעולה עם חברי הצוות'
                                 },
                                 {
                                     value: 4,
-                                    text: 'מנצל ביעילות את הזמן ביחס למשימות המוטלות'
+                                    text: 'מקבל ביקורת בצורה פתוחה ועניינית'
                                 },
                                 {
                                     value: 5,
-                                    text: 'פועלת כמיטב היכולת לשם עמידה במשימות ויעדים שהוצבו'
+                                    text: 'משתלב חברתית ותורם לאווירה חיובית בצוות ובסביבתו'
                                 }
                             ]
                         }
                     ]
                 },
                 {
+                    showQuestionNumbers: 'off',
                     type: 'panel',
                     name: 'serie4',
                     title: 'יוזמה ואחריות',
@@ -237,7 +243,7 @@ const surveyJson = {
                         {
                             type: 'matrixdropdown',
                             name: 'sr4',
-                            title: 'What do your feel?',
+                            title: 'סמנו את התשובה המתאימה ביותר עבורך',
                             columns: [
                                 {
                                     name: 'col4',
@@ -272,25 +278,47 @@ const surveyJson = {
                                     ]
                                 },
                                 {
+                                    isRequired: true,
                                     name: 'comment',
-                                    title: 'Please comment',
+                                    title: 'הערה מילולית',
                                     cellType: 'comment'
                                 }
                             ],
                             rows: [
-                                'Excited',
-                                'Enthusiastic',
-                                'Open',
-                                'Physically safe',
-                                'Emotionally safe',
-                                'Apprehensive',
-                                'Nervous',
-                                'Scared'
+                                {
+                                    value: 1,
+                                    text: 'מגלה אחריות בתפקיד'
+                                },
+                                {
+                                    value: 2,
+                                    text: 'מוכן למאמץ והשקעה מעבר למסגרת האחריות'
+                                },
+                                {
+                                    value: 3,
+                                    text: 'מגלה גמישות ונכונות לשינויים'
+                                },
+                                {
+                                    value: 4,
+                                    text: 'משקיע בעבודה בעת עומס'
+                                },
+                                {
+                                    value: 5,
+                                    text: 'מוכן למאמץ יתר ושעות נוספות'
+                                },
+                                {
+                                    value: 6,
+                                    text: 'נוקט יוזמה לשינויים, לשיפור המערכת, לרעיונות וחדשנות'
+                                },
+                                {
+                                    value: 7,
+                                    text: 'מבצע את העבודה ביסודיות ודייקנות'
+                                }
                             ]
                         }
                     ]
                 },
                 {
+                    showQuestionNumbers: 'off',
                     type: 'panel',
                     name: 'serie3',
                     title: 'משמעת',
@@ -298,7 +326,7 @@ const surveyJson = {
                         {
                             type: 'matrixdropdown',
                             name: 'sr3',
-                            title: 'What do your feel?',
+                            title: 'סמנו את התשובה המתאימה ביותר עבורך',
                             columns: [
                                 {
                                     name: 'col3',
@@ -333,33 +361,55 @@ const surveyJson = {
                                     ]
                                 },
                                 {
+                                    isRequired: true,
                                     name: 'comment',
-                                    title: 'Please comment',
+                                    title: 'הערה מילולית',
                                     cellType: 'comment'
                                 }
                             ],
                             rows: [
-                                'Excited',
-                                'Enthusiastic',
-                                'Open',
-                                'Physically safe',
-                                'Emotionally safe',
-                                'Apprehensive',
-                                'Nervous',
-                                'Scared'
+                                {
+                                    value: 1,
+                                    text: 'אחראי, אמין וניתן לסמוך'
+                                },
+                                {
+                                    value: 2,
+                                    text: 'מקפיד על ביצוע נהלים על פי מדיניות החברה'
+                                },
+                                {
+                                    value: 3,
+                                    text: 'מקפיד על דיווח מדוייק ואמין לגורמים הרלוונטיים'
+                                },
+                                {
+                                    value: 4,
+                                    text: 'מקפיד על נוכחות מלאה, אינו מאחר'
+                                },
+                                {
+                                    value: 5,
+                                    text: 'מקפיד על הופעה מסודרת'
+                                },
+                                {
+                                    value: 6,
+                                    text: 'פועל ליישום החלטות (בהתאם לסדר העדיפויות שהוגדר על ידי המנהל'
+                                },
+                                {
+                                    value: 7,
+                                    text: 'מקפיד על קיום נהלי בטיחות בעבודה'
+                                }
                             ]
                         }
                     ]
                 },
                 {
+                    showQuestionNumbers: 'off',
                     type: 'panel',
                     name: 'serie4',
-                    title: 'מיומנויות ניהול',
+                    title: 'מיומנויות ניהול (למנהלים)',
                     elements: [
                         {
                             type: 'matrixdropdown',
                             name: 'sr4',
-                            title: 'What do your feel?',
+                            title: 'סמנו את התשובה המתאימה ביותר עבורך',
                             columns: [
                                 {
                                     name: 'col4',
@@ -394,20 +444,61 @@ const surveyJson = {
                                     ]
                                 },
                                 {
+                                    isRequired: true,
                                     name: 'comment',
-                                    title: 'Please comment',
+                                    title: 'הערה מילולית',
                                     cellType: 'comment'
                                 }
                             ],
                             rows: [
-                                'Excited',
-                                'Enthusiastic',
-                                'Open',
-                                'Physically safe',
-                                'Emotionally safe',
-                                'Apprehensive',
-                                'Nervous',
-                                'Scared'
+                                {
+                                    value: 1,
+                                    text: 'מהווה דוגמא אישית'
+                                },
+                                {
+                                    value: 2,
+                                    text: 'יוצר הנעה ומטובציה'
+                                },
+                                {
+                                    value: 3,
+                                    text: 'מאציל סמכויות באופן אפקטיבי'
+                                },
+                                {
+                                    value: 4,
+                                    text: 'מציב יעדים ומטרות וחותר להשגתם'
+                                },
+                                {
+                                    value: 5,
+                                    text: 'מהווה סמכות מקצועית'
+                                },
+                                {
+                                    value: 6,
+                                    text: 'מתכנן מראש ומוצע לפועל את התכניות'
+                                },
+                                {
+                                    value: 7,
+                                    text: 'מטפח אווירה צוותית של שיתוף פעולה ועזרה הדדית'
+                                },
+                                {
+                                    value: 8,
+                                    text: 'מתקשר את הצרכים והרצונות של העובדים בפני הדרג המחליט'
+                                },
+                                {
+                                    value: 9,
+                                    text: 'מקבל החלטות שקולות ועניניות'
+                                },
+                                {
+                                    value: 10,
+                                    text: 'מציב סדרי עדיפויות תוך כדי ראיה מערכתית'
+                                },
+                                {
+                                    value: 11,
+                                    text: 'מטמיע את חשיבות הבטיחות בין העובדים ובכלל'
+                                },
+                                {
+                                    value: 12,
+                                    text: 'מפתח את העובדים'
+                                }
                             ]
                         }
                     ]
@@ -435,7 +526,7 @@ const surveyJson = {
                                 },
                                 {
                                     name: 'comment',
-                                    title: 'Please comment',
+                                    title: 'הערה מילולית',
                                     cellType: 'comment'
                                 }
                             ],
@@ -471,7 +562,7 @@ const surveyJson = {
                                 },
                                 {
                                     name: 'comment',
-                                    title: 'Please comment',
+                                    title: 'הערה מילולית',
                                     cellType: 'comment'
                                 }
                             ],
@@ -495,6 +586,7 @@ const surveyJson = {
 
 function QuestionnaireForm() {
     const survey = new Model(surveyJson);
+    const [allPanels, setPanels] = useState();
     // Add a title to the GitHub question
     // const github = survey.getQuestionByName('GitHub');
     // if (github) {
@@ -523,7 +615,7 @@ function QuestionnaireForm() {
             model={survey}
             align="right"
             sx={{
-                direction: 'rtl !importent'
+                direction: 'rtl'
             }}
         />
     );
