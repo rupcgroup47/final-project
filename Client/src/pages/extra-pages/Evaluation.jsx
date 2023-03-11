@@ -3,7 +3,6 @@ import 'survey-core/defaultV2.min.css';
 import { Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
 import { useCallback } from 'react';
-import { Panel, PanelGroup, Placeholder } from 'rsuite';
 import { surveyJson } from './/jsonServey';
 
 function QuestionnaireForm() {
@@ -40,17 +39,6 @@ function QuestionnaireForm() {
                 direction: 'rtl'
             }}
         />
-        // <PanelGroup accordion defaultActiveKey={1} bordered>
-        //     <Panel header="Panel 1" eventKey={1} id="panel1">
-        //         <Placeholder.Paragraph />
-        //     </Panel>
-        //     <Panel header="Panel 2" eventKey={2} id="panel2">
-        //         <Placeholder.Paragraph />
-        //     </Panel>
-        //     <Panel header="Panel 3" eventKey={3} id="panel3">
-        //         <Placeholder.Paragraph />
-        //     </Panel>
-        // </PanelGroup>
     );
 }
 
