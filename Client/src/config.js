@@ -8,7 +8,7 @@ const config = {
     container: true,
     mode: 'light',
     presetColor: 'default',
-    themeDirection: 'rtl',
+    themeDirection: 'rtl !important',
     direction: 'rtl !important'
 };
 
